@@ -14,7 +14,7 @@ function App() {
   const handlechange=(e)=>{
     const formdata=new FormData()
     formdata.append('file',file)
-    axios.post('http://localhost:5000/upload',formdata)
+    axios.post('https://image-upload-display-3.onrender.com/upload',formdata)
     .then(result=>{console.log(result)
       setUpload(!upload)
     })
@@ -22,7 +22,7 @@ function App() {
   }
 
   useEffect(()=>{
-    axios.get("http://localhost:5000/getphoto")
+    axios.get(" https://image-upload-display-3.onrender.com/getphoto")
     .then(result=>setimage(result.data[result.data.length-1].image))
     .catch(err=>console.log(err))
   },[upload])
@@ -32,7 +32,7 @@ function App() {
       <h1 className='text-center text-primary'>upload photo</h1>
       <input type='file' className=' mx-auto' onChange={(e)=>setfiles(e.target.files[0])}></input>
       <button className='btn btn-primary mx-auto' onClick={handlechange}>UPLOAD</button>
-      <br></br><img className="rounded  mx-auto" width={400} height={450} src={"http://localhost:5000/images/"+images}></img>
+      <br></br><img className="rounded  mx-auto" width={400} height={450} src={" https://image-upload-display-3.onrender.com/"+images}></img>
     </div>
   )
 }
