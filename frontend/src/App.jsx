@@ -32,7 +32,7 @@ function App() {
       <h1 className='text-center text-primary'>upload photo</h1>
       <input type='file' className=' mx-auto' onChange={(e)=>setfiles(e.target.files[0])}></input>
       <button className='btn btn-primary mx-auto' onClick={handlechange}>UPLOAD</button>
-      <br></br><img className="rounded  mx-auto" width={400} height={450} src={" https://image-upload-display-3.onrender.com/"+images}></img>
+      <br></br><img className="rounded  mx-auto" width={400} height={450} src={" https://image-upload-display-3.onrender.com/images/"+images}></img>
     </div>
   )
 }
